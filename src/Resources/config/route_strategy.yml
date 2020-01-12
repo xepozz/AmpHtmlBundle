@@ -2,7 +2,6 @@ services:
     takeit_amp_html.delegating_loader:
         class: Takeit\Bundle\AmpHtmlBundle\Routing\Loader\DelegatingLoader
         arguments:
-            - '@controller_name_converter'
             - '@routing.resolver'
 
     routing.loader:
