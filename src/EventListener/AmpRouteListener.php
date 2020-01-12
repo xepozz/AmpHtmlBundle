@@ -13,7 +13,7 @@ namespace Takeit\Bundle\AmpHtmlBundle\EventListener;
 
 use LogicException;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
-use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Takeit\Bundle\AmpHtmlBundle\Checker\AmpSupportCheckerInterface;
 
 final class AmpRouteListener
@@ -51,9 +51,9 @@ final class AmpRouteListener
     }
 
     /**
-     * @param FilterControllerEvent $event
+     * @param \Symfony\Component\HttpKernel\Event\ControllerEvent $event
      */
-    public function onKernelController(FilterControllerEvent $event)
+    public function onKernelController(ControllerEvent $event)
     {
         $request = $event->getRequest();
 
