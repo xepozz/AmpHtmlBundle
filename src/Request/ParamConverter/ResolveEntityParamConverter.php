@@ -75,10 +75,8 @@ class ResolveEntityParamConverter extends DoctrineParamConverter
     protected function resolveTargetEntity(ParamConverter $configuration)
     {
         $class = $configuration->getClass();
-        if (isset($this->mapping[$class])) {
-            if ($this->mapping[$class] !== $class) {
-                $configuration->setClass($this->mapping[$class]);
-            }
+        if (isset($this->mapping[$class]) && $this->mapping[$class] !== $class) {
+            $configuration->setClass($this->mapping[$class]);
         }
 
         return $configuration;
