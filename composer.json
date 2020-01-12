@@ -2,8 +2,14 @@
     "name": "takeit/amp-html-bundle",
     "type": "symfony-bundle",
     "description": "Provide AMP HTML conversion to your Symfony2/Symfony3 projects.",
-    "keywords": ["amphtml", "amp-html", "amp", "google", "html"],
-    "license":"MIT",
+    "keywords": [
+        "amphtml",
+        "amp-html",
+        "amp",
+        "google",
+        "html"
+    ],
+    "license": "MIT",
     "minimum-stability": "dev",
     "authors": [
         {
@@ -25,7 +31,9 @@
         "exclude-from-classmap": [
             "spec/"
         ],
-        "psr-4": { "Takeit\\Bundle\\AmpHtmlBundle\\": "" }
+        "psr-4": {
+            "Takeit\\Bundle\\AmpHtmlBundle\\": ""
+        }
     },
     "autoload-dev": {
         "psr-4": {
