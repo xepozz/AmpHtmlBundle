@@ -156,7 +156,7 @@ Reference Configuration
 takeit_amp_html:
     theme:
         loader: 'takeit_amp_html.loader.theme.default'
-        theme_path: "%kernel.root_dir%/Resources/amp/themes/amp-theme"
+        theme_path: "%kernel.project_dir%/Resources/amp/themes/amp-theme"
     model: AppBundle\Entity\Post
     checker: 'takeit_amp_html.checker.default'
     routing:
