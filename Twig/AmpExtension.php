@@ -12,11 +12,12 @@
 namespace Takeit\Bundle\AmpHtmlBundle\Twig;
 
 use Takeit\Bundle\AmpHtmlBundle\Generator\AmpUrlGeneratorInterface;
+use Twig\Extension\AbstractExtension;
 
 /**
  * AMP Twig Extension.
  */
-class AmpExtension extends \Twig_Extension
+class AmpExtension extends AbstractExtension
 {
     /**
      * @var AmpUrlGeneratorInterface

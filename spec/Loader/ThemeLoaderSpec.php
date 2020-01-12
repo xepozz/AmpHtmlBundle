@@ -20,7 +20,7 @@ use Takeit\Bundle\AmpHtmlBundle\Loader\ThemeLoaderInterface;
  */
 final class ThemeLoaderSpec extends ObjectBehavior
 {
-    public function let(\Twig_Loader_Filesystem $filesystem)
+    public function let(\Twig\Loader\FilesystemLoader $filesystem)
     {
         $this->beConstructedWith($filesystem, '/path/to/amp/amp-theme');
     }
@@ -35,7 +35,7 @@ final class ThemeLoaderSpec extends ObjectBehavior
         $this->shouldImplement(ThemeLoaderInterface::class);
     }
 
-    public function it_loads_amp_theme(\Twig_Loader_Filesystem $filesystem)
+    public function it_loads_amp_theme(\Twig\Loader\FilesystemLoader $filesystem)
     {
         $filesystem->addPath('/path/to/amp/amp-theme', 'amp_theme')->shouldBeCalled();
 

@@ -24,7 +24,7 @@ use Takeit\Bundle\AmpHtmlBundle\Model\AmpInterface;
 class AmpViewController
 {
     /**
-     * @var \Twig_environment
+     * @var \Twig\Environment
      */
     private $twig;
 
@@ -39,12 +39,12 @@ class AmpViewController
     private $themeLoader;
 
     /**
-     * @param \Twig_Environment     $twig
+     * @param \Twig\Environment     $twig
      * @param AmpConverterInterface $converter
      * @param ThemeLoaderInterface  $themeLoader
      */
     public function __construct(
-        \Twig_Environment $twig,
+        \Twig\Environment $twig,
         AmpConverterInterface $converter,
         ThemeLoaderInterface $themeLoader
     ) {
