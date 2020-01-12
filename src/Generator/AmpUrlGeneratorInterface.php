@@ -15,7 +15,6 @@ interface AmpUrlGeneratorInterface
 {
     /**
      * @param string $url
-     *
      * @return string
      */
     public function generate($url);

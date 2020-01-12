@@ -22,7 +22,6 @@ interface AmpConverterInterface
      * Converts HTML to AMP HTML.
      *
      * @param $html HTML string
-     *
      * @return string
      */
     public function convertToAmp($html);

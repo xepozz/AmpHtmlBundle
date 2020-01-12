@@ -35,7 +35,7 @@ class ResolveEntityParamConverter extends DoctrineParamConverter
     protected $mapping;
 
     /**
-     * @param array                $mapping  Interface to entity mapping
+     * @param array $mapping Interface to entity mapping
      * @param ManagerRegistry|null $registry Registry manager
      */
     public function __construct(array $mapping, ManagerRegistry $registry = null)
@@ -70,7 +70,6 @@ class ResolveEntityParamConverter extends DoctrineParamConverter
      * Resolves the target entity.
      *
      * @param ParamConverter $configuration Contains the name, class and options of the object
-     *
      * @return ParamConverter
      */
     protected function resolveTargetEntity(ParamConverter $configuration)

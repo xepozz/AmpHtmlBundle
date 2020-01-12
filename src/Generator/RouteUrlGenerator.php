@@ -11,6 +11,8 @@
 
 namespace Takeit\Bundle\AmpHtmlBundle\Generator;
 
+use Exception;
+
 final class RouteUrlGenerator implements AmpUrlGeneratorInterface
 {
     /**
@@ -18,6 +20,6 @@ final class RouteUrlGenerator implements AmpUrlGeneratorInterface
      */
     public function generate($url)
     {
-        throw new \Exception('Not implemented yet...');
+        throw new Exception('Not implemented yet...');
     }
 }

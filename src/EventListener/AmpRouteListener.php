@@ -11,6 +11,7 @@
 
 namespace Takeit\Bundle\AmpHtmlBundle\EventListener;
 
+use LogicException;
 use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Takeit\Bundle\AmpHtmlBundle\Checker\AmpSupportCheckerInterface;
@@ -35,7 +36,7 @@ final class AmpRouteListener
     /**
      * AmpRouteListener constructor.
      *
-     * @param AmpSupportCheckerInterface  $checker
+     * @param AmpSupportCheckerInterface $checker
      * @param ControllerResolverInterface $controllerResolver
      * @param $controller
      */
@@ -60,7 +61,7 @@ final class AmpRouteListener
             $request->attributes->set('_controller', $this->controller);
             $controller = $this->controllerResolver->getController($request);
             if (!$controller) {
-                throw new \LogicException('Controller can not be determined!');
+                throw new LogicException('Controller can not be determined!');
             }
 
             $event->setController($controller);

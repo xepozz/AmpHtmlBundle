@@ -11,6 +11,7 @@
 
 namespace Takeit\Bundle\AmpHtmlBundle\Routing\Loader;
 
+use RuntimeException;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
@@ -45,8 +46,8 @@ class AmpLoader extends Loader
 
     /**
      * @param AmpSupportCheckerInterface $checker
-     * @param array                      $parameters
-     * @param string                     $controller
+     * @param array $parameters
+     * @param string $controller
      */
     public function __construct(AmpSupportCheckerInterface $checker, array $parameters, $controller)
     {
@@ -61,7 +62,7 @@ class AmpLoader extends Loader
     public function load($resource, $type = null)
     {
         if (true === $this->loaded) {
-            throw new \RuntimeException('Do not add the "amp" loader twice');
+            throw new RuntimeException('Do not add the "amp" loader twice');
         }
 
         $routes = new RouteCollection();
@@ -80,14 +81,14 @@ class AmpLoader extends Loader
             );
         }
 
-        $defaults = array(
+        $defaults = [
             '_controller' => $this->controller,
             '_amp_route' => true,
-        );
+        ];
 
-        $requirements = array(
+        $requirements = [
             $this->parameters['parameter'] => $this->parameters['parameterRegex'],
-        );
+        ];
 
         $routes->add('takeit_amp_html_view', new Route($path, $defaults, $requirements));
         $this->loaded = true;

@@ -36,12 +36,15 @@ class TakeitAmpHtmlExtension extends Extension
             return;
         }
 
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 
         if ($config['routing']['parameter_strategy']['enabled']) {
             $loader->load('parameter_strategy.yml');
         } else {
-            $container->setParameter($this->getAlias().'.configuration.routing.route_strategy', $config['routing']['route_strategy']);
+            $container->setParameter(
+                $this->getAlias() . '.configuration.routing.route_strategy',
+                $config['routing']['route_strategy']
+            );
             $loader->load('route_strategy.yml');
         }
 
@@ -54,12 +57,15 @@ class TakeitAmpHtmlExtension extends Extension
         unset($config['theme']['loader']);
         foreach ($config['theme'] as $key => $value) {
             $container->setParameter(
-                $this->getAlias().'.configuration.theme.'.$key,
+                $this->getAlias() . '.configuration.theme.' . $key,
                 $value
             );
         }
 
-        $container->setParameter($this->getAlias().'.configuration.model.class', $config['model']);
-        $container->setParameter($this->getAlias().'.configuration.routing.controller', $config['routing']['controller']);
+        $container->setParameter($this->getAlias() . '.configuration.model.class', $config['model']);
+        $container->setParameter(
+            $this->getAlias() . '.configuration.routing.controller',
+            $config['routing']['controller']
+        );
     }
 }

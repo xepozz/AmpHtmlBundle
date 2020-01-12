@@ -19,9 +19,9 @@ final class ParameterUrlGenerator implements AmpUrlGeneratorInterface
     public function generate($url)
     {
         if (strpos($url, '?') !== false) {
-            return $url.'&amp';
+            return $url . '&amp';
         }
 
-        return $url.'?amp';
+        return $url . '?amp';
     }
 }

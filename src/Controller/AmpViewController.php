@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Takeit\Bundle\AmpHtmlBundle\Converter\AmpConverterInterface;
 use Takeit\Bundle\AmpHtmlBundle\Loader\ThemeLoaderInterface;
 use Takeit\Bundle\AmpHtmlBundle\Model\AmpInterface;
+use Twig\Environment;
 
 /**
  * Renders AMP HTML compatible template.
@@ -39,12 +40,12 @@ class AmpViewController
     private $themeLoader;
 
     /**
-     * @param \Twig\Environment     $twig
+     * @param \Twig\Environment $twig
      * @param AmpConverterInterface $converter
-     * @param ThemeLoaderInterface  $themeLoader
+     * @param ThemeLoaderInterface $themeLoader
      */
     public function __construct(
-        \Twig\Environment $twig,
+        Environment $twig,
         AmpConverterInterface $converter,
         ThemeLoaderInterface $themeLoader
     ) {
@@ -55,7 +56,6 @@ class AmpViewController
 
     /**
      * @param AmpInterface $object
-     *
      * @return Response
      */
     public function viewAction(AmpInterface $object)
@@ -63,9 +63,12 @@ class AmpViewController
         $this->themeLoader->load();
 
         $response = new Response();
-        $content = $this->twig->render(sprintf('@%s/index.html.twig', ThemeLoaderInterface::THEME_NAMESPACE), [
-            'object' => $object,
-        ]);
+        $content = $this->twig->render(
+            sprintf('@%s/index.html.twig', ThemeLoaderInterface::THEME_NAMESPACE),
+            [
+                'object' => $object,
+            ]
+        );
 
         $response->setContent($this->converter->convertToAmp($content));
 
