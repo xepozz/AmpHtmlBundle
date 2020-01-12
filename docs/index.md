@@ -166,6 +166,6 @@ takeit_amp_html:
             prefix: "/platform/amp"
             parameter: "slug"
             parameterRegex: ".+"
-         parameter_strategy:
+        parameter_strategy:
             enabled: true
 ```
