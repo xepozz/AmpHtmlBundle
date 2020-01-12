@@ -40,7 +40,7 @@ class Configuration implements ConfigurationInterface
                             ->cannotBeEmpty()
                         ->end()
                         ->scalarNode('theme_path')
-                            ->defaultValue('%kernel.project_dir%/Resources/amp/amp-theme')
+                            ->defaultValue('%kernel.project_dir%/Resources/amp/themes/amp-theme')
                         ->end()
                     ->end()
                 ->end()
