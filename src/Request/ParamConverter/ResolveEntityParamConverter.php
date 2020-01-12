@@ -11,7 +11,7 @@
 
 namespace Takeit\Bundle\AmpHtmlBundle\Request\ParamConverter;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +43,7 @@ class ResolveEntityParamConverter extends DoctrineParamConverter
         $this->mapping = $mapping;
         $this->registry = $registry;
 
-        parent::__construct($registry);
+        parent::__construct($registry, null, ['mapping' => $mapping]);
     }
 
     /**
