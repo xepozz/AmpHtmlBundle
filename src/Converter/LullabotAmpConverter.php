@@ -11,8 +11,8 @@
 
 namespace Takeit\Bundle\AmpHtmlBundle\Converter;
 
-use Lullabot\AMP\Validate\Scope;
 use Lullabot\AMP\AMP;
+use Lullabot\AMP\Validate\Scope;
 
 /**
  * HTML to AMP HTML converter.

@@ -32,7 +32,7 @@
             "spec/"
         ],
         "psr-4": {
-            "Takeit\\Bundle\\AmpHtmlBundle\\": ""
+            "Takeit\\Bundle\\AmpHtmlBundle\\": "src/"
         }
     },
     "autoload-dev": {
