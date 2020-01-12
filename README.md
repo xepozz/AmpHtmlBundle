@@ -21,7 +21,7 @@ php composer.phar require takeit/amp-html-bundle:0.1.*
 Documentation
 -------------
 
-Read the [Documentation] to learn more about this bundle.
+Read the [Documentation](docs/index.md) to learn more about this bundle.
 
 Contribute
 ----------
