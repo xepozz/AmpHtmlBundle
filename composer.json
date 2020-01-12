@@ -22,7 +22,7 @@
         "lullabot/amp": "1.1.*",
         "symfony/framework-bundle": "^3.4 || ^4.1 || ^5.0",
         "symfony/twig-bundle": "^3.4 || ^4.1 || ^5.0",
-        "sensio/framework-extra-bundle": "^4.0",
+        "sensio/framework-extra-bundle": "^5.4",
         "doctrine/persistence": "^1.2"
     },
     "require-dev": {
