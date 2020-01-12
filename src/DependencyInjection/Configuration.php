@@ -26,8 +26,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('takeit_amp_html')
+        $nodeRoot = $this->getRootNode('takeit_amp_html');
+
+        return $nodeRoot
             ->canBeDisabled()
                 ->info('Enable or disable Google AMP HTML support.')
             ->addDefaultsIfNotSet()
@@ -92,7 +93,15 @@ class Configuration implements ConfigurationInterface
                 ->end()
             ->end()
         ;
+    }
 
-        return $treeBuilder;
+    private function getRootNode(TreeBuilder $treeBuilder, $name)
+    {
+        // BC layer for symfony/config 4.1 and older
+        if (!method_exists($treeBuilder, 'getRootNode')) {
+            return $treeBuilder->root($name);
+        }
+
+        return $treeBuilder->getRootNode();
     }
 }
